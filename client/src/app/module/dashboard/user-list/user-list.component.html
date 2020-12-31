@@ -1,0 +1,20 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="topbar"  fxLayout="row" fxLayoutAlign="center center">
+        <h2>
+            Welcome To Users List
+        </h2>
+    </div>
+    <div class="main-content" fxLayout="column" fxLayoutAlign="start stretch">
+
+        <div fxLayout="row" fxLayoutAlign="end center">
+            <button mat-raised-button color="primary" (click)="addNewUser()">
+                Add new user
+            </button>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="start center">
+            <app-user-card *ngFor="let user of allUsers" [user]="user" (onChange)="onChanges()">
+            </app-user-card>
+        </div>
+    </div>
+</div>

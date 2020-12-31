@@ -1,0 +1,21 @@
+<div class="user-card" fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxLayout="row" fxLayoutAlign="end center">
+        <mat-icon color="accent" (click)="edit()">create</mat-icon>
+        <mat-icon color="warn" (click)="delete()">delete</mat-icon>
+    </div>
+    <div class="user-name" fxLayout="row" fxLayoutAlign="start center">
+        {{user.firstName+' '+user.lastName}}
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <span class="label">Email : </span>
+        <span class="value">
+            {{user.email}}
+        </span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+        <span class="label">Mobile No : </span>
+        <span class="value">
+            {{user.mobileNo}}
+        </span>
+    </div>
+</div>

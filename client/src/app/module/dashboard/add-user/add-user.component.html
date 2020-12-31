@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Add New User</h1>
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <form [formGroup]="addUserForm" (ngSubmit)="saveOrUpdate()" fxLayout="column" fxLayoutAlign="start stretch"
+        fxLayoutGap="14px">
+        <mat-form-field>
+            <input matInput placeholder="First Name" formControlName="firstName">
+            <mat-error *ngIf="addUserForm.controls['firstName'].errors?.required">First Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Last Name" formControlName="lastName">
+            <mat-error *ngIf="addUserForm.controls['lastName'].errors?.required">Last Name is required</mat-error>
+
+        </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="addUserForm.controls['email'].errors?.required">Email is required</mat-error>
+            <mat-error *ngIf="addUserForm.controls['email'].errors?.email">Invalid email</mat-error>
+
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Mobile" formControlName="mobile">
+            <mat-error *ngIf="addUserForm.controls['mobile'].errors?.required">Mobile number is required</mat-error>
+            <mat-error *ngIf="addUserForm.controls['mobile'].errors?.pattern">Invalid mobile number</mat-error>
+        </mat-form-field>
+
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="24px">
+            <button type="submit" [disabled]="!addUserForm?.valid" mat-raised-button color="primary">Save</button>
+            <button type="button" mat-button color="primary" (click)="dialogRef.close()">Cancel</button>
+        </div>
+
+    </form>
+</div>

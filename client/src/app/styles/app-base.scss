@@ -1,0 +1,23 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app-card{
+    background-color: white;
+    padding: 40px;
+    width: 25vw;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.page-heading{
+    font-size: 24px;
+    color: white;
+    margin-bottom: 24px;
+}
+
+.app-spinner{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+}
